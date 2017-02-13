@@ -1,0 +1,15 @@
+<p><h1>All Products</h1></p>
+<ul>
+  <% if @cart%>
+ <% @cart.each do |item|  %>
+     <li><%=item%></li>
+  <% end %>
+  <% end %>
+</ul>
+
+
+<%= form_for("produts",url:{ controller: "products", action: "add" }, method: "post") do %>
+
+  <input type="text" name="product">
+  <input type="submit" value="add to cart">
+<% end %>
